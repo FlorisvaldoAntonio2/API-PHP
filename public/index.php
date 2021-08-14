@@ -1,6 +1,7 @@
 <?php
     require_once '../controller/Uri.php';
     require_once '../controller/User.php';
+    require_once '../controller/Livro.php';
 
     header('Content-Type: application/json');
 
@@ -8,8 +9,10 @@
 
         $url = explode('/',$_SERVER['PATH_INFO']);
 
+        $parametros = ['user','livro'];
+
         
-        if($url[1] !== 'api' || $url[2] !== 'user'){
+        if($url[1] !== 'api' || !in_array(strtolower($url[2]), $parametros)){
             http_response_code(404);
             die();
         }

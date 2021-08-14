@@ -1,18 +1,41 @@
 Minha API
 
-executar o script sql, para a criação do banco
+Esse prejeto é apenas um exercio para o treinamento pessoal;
 
-subir server = php -S localhost:8000 -t public
+-----Estou implementando ainda o PUT e a validação de dados e usuarios(Update dos usuarios e livros)------
 
-eu utilizei o POSTMAN para realizar as requisições HTTP (GET - POST - DELETE - PUT)
+Requisitos para rodar o projeto:
+* PHP 
+* MYSQL
+* POSTMAN
 
-URL base = localhost:8000/api/user
+PASSOS:
 
-retornar um usuario (METODO HTTP = GET): localhost:8000/api/user/{id} -> localhost:8000/api/user/1
+1 - Executar o script sql, para a criação dos bancos;
 
-retornar todos os usuarios (METODO HTTP = GET): localhost:8000/api/user
+2 - Subir server = php -S localhost:8000 -t public;
 
-deletar um usuario (METODO HTTP = DELETE): localhost:8000/api/user/{id} -> localhost:8000/api/user/1
+3 - Execultal as requisições para o seu localhost, eu utilizei o POSTMAN para realizar as requisições HTTP (GET - POST - DELETE - PUT);
 
-adicionar usuario (METODO HTTP = POST): localhost:8000/api/user
+------ URL BASE = localhost:8000/api/ -------
+
+* EXEMPLOS:
+
+- Retornar um usuario (METODO HTTP = GET): localhost:8000/api/user/{id} -> localhost:8000/api/user/1
+
+- Retornar todos os usuarios (METODO HTTP = GET): localhost:8000/api/user
+
+- Deletar um usuario (METODO HTTP = DELETE): localhost:8000/api/user/{id} -> localhost:8000/api/user/1
+
+- Adicionar usuario (METODO HTTP = POST): localhost:8000/api/user
 parametros no corpo da requisição = nome - email (unico) - sexo ('M' or 'F')
+
+- Retornar um livro (METODO HTTP = GET): localhost:8000/api/livro/{id} -> localhost:8000/api/livro/1
+
+- Retornar todos os livros (METODO HTTP = GET): localhost:8000/api/livro
+
+- Reletar um livro (METODO HTTP = DELETE): localhost:8000/api/livro/{id} -> localhost:8000/api/livro/1
+
+- Adicionar livro (METODO HTTP = POST): localhost:8000/api/livro
+parametros no corpo da requisição = titulo - autor - num_pag
+

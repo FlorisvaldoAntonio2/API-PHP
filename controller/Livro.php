@@ -1,17 +1,17 @@
 <?php
 
-    require_once '../model/BancoUser.php';
-    require_once '../model/ModelUser.php';
+    require_once '../model/ConexaoApi.php';
+    require_once '../model/ModelLivro.php';
 
 
-class User{
+class Livro{
     private $conexao;
-    private $user;
+    private $livro;
 
     public function __construct()
     {
-        $this->conexao = new BancoUser();
-        $this->user = new ModelUser();
+        $this->conexao = new BancoLivro();
+        $this->livro = new ModelLivro();
     }
 
     public function get($id = null)
@@ -38,16 +38,16 @@ class User{
 
     public function post($value)
     {
-        if(array_key_exists('nome',$value) && 
-           array_key_exists('email',$value) && 
-           array_key_exists('sexo',$value))
+        if(array_key_exists('titulo',$value) && 
+           array_key_exists('autor',$value) && 
+           array_key_exists('num_pag',$value))
         {
 
-            $this->user->setNome($value['nome']);
-            $this->user->setEmail($value['email']);
-            $this->user->setSexo($value['sexo']);
+            $this->livro->setTitulo($value['titulo']);
+            $this->livro->setAutor($value['autor']);
+            $this->livro->setNum_pag($value['num_pag']);
         
-            return $this->user->persistir();
+            return $this->livro->persistir();
             
         }
         else{

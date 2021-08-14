@@ -1,8 +1,9 @@
 <?php
 
-require_once 'ConexaoApi.php';
+require_once 'BancoUser.php';
+require_once "ConexaoApi.php";
 
-class ModelUser extends ConexaoApi{
+class ModelUser extends BancoUser{
      private $nome;
      private $email;
      private $sexo;
@@ -45,6 +46,7 @@ class ModelUser extends ConexaoApi{
 
      public function persistir()
      {
+         
          return $this->insert($this->getNome(),$this->getEmail(),$this->getSexo());
      }
 }

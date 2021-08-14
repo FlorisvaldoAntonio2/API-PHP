@@ -12,3 +12,11 @@ CREATE TABLE user(
     data_cadastro DATETIME DEFAULT (NOW()),
     PRIMARY KEY (id)
 );
+
+CREATE TABLE livro(
+    id INT AUTO_INCREMENT,
+    titulo VARCHAR(30) NOT NULL,
+    autor VARCHAR(40) NOT NULL,
+    num_pag INT NOT NULL,
+    PRIMARY KEY (id)
+);
