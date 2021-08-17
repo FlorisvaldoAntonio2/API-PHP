@@ -1,16 +1,18 @@
 <?php
 
-    require_once '../model/BancoUser.php';
-    require_once '../model/ModelUser.php';
+namespace api\controller;
 
-class User{
+use api\model\ModelLivro;
+use api\model\BancoLivro;
+
+class Livro{
     private $conexao;
-    private $user;
+    private $livro;
 
     public function __construct()
     {
-        $this->conexao = new BancoUser();
-        $this->user = new ModelUser();
+        $this->conexao = new BancoLivro();
+        $this->livro = new ModelLivro();
     }
 
     public function get($id = null)
@@ -27,7 +29,6 @@ class User{
     public function delete($id = null)
     {
         if($id[0]){
-            //cast para INT
             return $this->conexao->delete((int)$id[0]);
         }
         else{
@@ -43,16 +44,16 @@ class User{
     
         if(isset($resu) && $value != null){
 
-            if(array_key_exists('nome',$resu) && 
-                array_key_exists('email',$resu) && 
-                array_key_exists('sexo',$resu))
+            if(array_key_exists('titulo',$resu) && 
+                array_key_exists('autor',$resu) && 
+                array_key_exists('num_pag',$resu))
                 {
 
-                    $this->user->setNome($resu['nome']);
-                    $this->user->setEmail($resu['email']);
-                    $this->user->setSexo($resu['sexo']);
+                    $this->livro->setTitulo($resu['titulo']);
+                    $this->livro->setAutor($resu['autor']);
+                    $this->livro->setNum_pag($resu['num_pag']);
                 
-                    return $this->user->atualizar((int)$value[0]);
+                    return $this->livro->atualizar((int)$value[0]);
             
                 }
             else{
@@ -67,17 +68,17 @@ class User{
 
     public function post($value)
     {
-    
-        if(array_key_exists('nome',$value[0]) && 
-           array_key_exists('email',$value[0]) && 
-           array_key_exists('sexo',$value[0]))
-        {
-
-            $this->user->setNome($value[0]['nome']);
-            $this->user->setEmail($value[0]['email']);
-            $this->user->setSexo($value[0]['sexo']);
         
-            return $this->user->persistir();
+        if(array_key_exists('titulo',$value[0]) && 
+           array_key_exists('autor',$value[0]) && 
+           array_key_exists('num_pag',$value[0]))
+        {
+            
+            $this->livro->setTitulo($value[0]['titulo']);
+            $this->livro->setAutor($value[0]['autor']);
+            $this->livro->setNum_pag($value[0]['num_pag']);
+        
+            return $this->livro->persistir();
             
         }
         else{

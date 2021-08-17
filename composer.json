@@ -1,0 +1,16 @@
+{
+    "name": "florisvaldoantonio2/api",
+    "authors": [
+        {
+            "name": "Florisvaldo",
+            "email": "florisvaldoantonio2@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": ["api/config/config.php"],
+        "psr-4": {
+             "api\\": "api/"
+         }
+      }
+}

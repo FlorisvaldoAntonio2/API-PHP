@@ -1,7 +1,8 @@
 <?php
 
-require_once "ConexaoApi.php";
+namespace api\model;
 
+use api\model\ConexaoApi;
 
 class BancoUser{
     protected $conn;
@@ -9,10 +10,7 @@ class BancoUser{
 
     public function __construct()
     {
-        
       $this->conn = ConexaoApi::getConection();
-
-
     }
 
     public function select(INT $id):array
@@ -21,7 +19,7 @@ class BancoUser{
         $stmt->bindValue(':ID',$id);
         $stmt->execute();
         if($stmt->rowCount() == 1){
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         }
         else{
             return ['cod' => 400, 'msg' => 'Usuario não encontrado!'];
@@ -70,7 +68,7 @@ class BancoUser{
         $stmt = $this->conn->prepare("SELECT * FROM user");
         $stmt->execute();
         if($stmt->rowCount() > 0){
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         }
         else{
             return ['cod' => 400, 'msg' => 'Usuario não encontrado!'];

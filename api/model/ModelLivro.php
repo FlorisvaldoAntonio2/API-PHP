@@ -1,7 +1,8 @@
 <?php
 
-require_once 'ConexaoApi.php';
-require_once 'BancoLivro.php';
+namespace api\model;
+
+use api\model\BancoLivro;
 
 class ModelLivro extends BancoLivro{
      private $titulo;

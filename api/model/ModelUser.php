@@ -1,7 +1,8 @@
 <?php
 
-require_once 'BancoUser.php';
-require_once "ConexaoApi.php";
+namespace api\model;
+
+use api\model\BancoUser;
 
 class ModelUser extends BancoUser{
      private $nome;

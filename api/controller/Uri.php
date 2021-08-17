@@ -1,5 +1,6 @@
 <?php
 
+namespace api\controller;
 
 class Uri{
     private $servico;
@@ -11,7 +12,7 @@ class Uri{
     public function __construct(array $url)
     {
         $this->url = $url;
-        $this->servico = $url[2];
+        $this->servico = "api\controller\\" . $url[2];
         $this->metodo = strtolower($_SERVER['REQUEST_METHOD']);
 
         if($this->metodo === 'get' || $this->metodo === 'delete' || $this->metodo === 'put'){

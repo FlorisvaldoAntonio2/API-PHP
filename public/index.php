@@ -1,7 +1,8 @@
 <?php
-    require_once '../controller/Uri.php';
-    require_once '../controller/User.php';
-    require_once '../controller/Livro.php';
+
+    require_once '../vendor/autoload.php';
+
+    use api\controller\{Uri};
 
     header('Content-Type: application/json');
 
@@ -18,7 +19,6 @@
         }
 
         $api = new Uri($url);
-
 
         $api->run();
 

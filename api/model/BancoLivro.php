@@ -1,7 +1,8 @@
 <?php
 
-require_once "ConexaoApi.php";
+namespace api\model;
 
+use api\model\ConexaoApi;
 
 class BancoLivro{
     protected $conn;
@@ -12,7 +13,6 @@ class BancoLivro{
         
       $this->conn = ConexaoApi::getConection();
 
-
     }
 
     public function select(INT $id):array
@@ -21,7 +21,7 @@ class BancoLivro{
         $stmt->bindValue(':ID',$id);
         $stmt->execute();
         if($stmt->rowCount() == 1){
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         }
         else{
             return ['cod' => 400, 'msg' => 'Livro não encontrado!'];
@@ -50,7 +50,7 @@ class BancoLivro{
         $stmt = $this->conn->prepare("SELECT * FROM livro");
         $stmt->execute();
         if($stmt->rowCount() > 0){
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         }
         else{
             return ['cod' => 400, 'msg' => 'Livro não encontrado!'];

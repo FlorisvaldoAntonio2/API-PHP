@@ -1,6 +1,6 @@
 <?php
 
-require_once '../config/config.php';
+namespace api\model;
 
 class ConexaoApi {
     public static $conn;
@@ -9,11 +9,11 @@ class ConexaoApi {
     public static function getConection(){
 
             try{
-                self::$conn = new PDO("mysql:host=" . HOST . ";dbname=" . DB, USER , PASS);
+                self::$conn = new \PDO("mysql:host=" . HOST . ";dbname=" . DB, USER , PASS);
                 
             }
             
-            catch(PDOException $e){
+            catch(\PDOException $e){
                 self::$erro = $e->getMessage();
             }
             
