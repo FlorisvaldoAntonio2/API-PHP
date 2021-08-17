@@ -46,7 +46,11 @@ class ModelUser extends BancoUser{
 
      public function persistir()
      {
-         
          return $this->insert($this->getNome(),$this->getEmail(),$this->getSexo());
+     }
+
+     public function atualizar($id)
+     {
+         return $this->update($this->getNome(),$this->getEmail(),$this->getSexo(),$id);
      }
 }

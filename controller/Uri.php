@@ -6,6 +6,7 @@ class Uri{
     private $metodo;
     public $resultado;
     public $http_status_code;
+    public $valor;
 
     public function __construct(array $url)
     {
@@ -13,12 +14,13 @@ class Uri{
         $this->servico = $url[2];
         $this->metodo = strtolower($_SERVER['REQUEST_METHOD']);
 
-        if($this->metodo === 'get' || $this->metodo === 'delete'){
-            $this->valor = isset($this->url[3]) ? $this->url[3] : null;
+        if($this->metodo === 'get' || $this->metodo === 'delete' || $this->metodo === 'put'){
+            $this->valor[0] = isset($this->url[3]) ? $this->url[3] : null;
         }
         elseif($this->metodo === 'post'){
-            $this->valor = isset($_POST) ? $_POST: null;
+            $this->valor[0] = isset($_POST) ? $_POST: null;
         }
+
 
     }
 

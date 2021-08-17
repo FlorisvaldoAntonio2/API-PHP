@@ -48,4 +48,9 @@ class ModelLivro extends BancoLivro{
      {
          return $this->insert($this->getTitulo(),$this->getAutor(),$this->getNum_pag());
      }
+
+     public function atualizar($id)
+     {
+         return $this->update($this->getTitulo(),$this->getAutor(),$this->getNum_pag(),$id);
+     }
 }

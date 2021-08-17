@@ -73,4 +73,24 @@ class BancoLivro{
             
         }
     }
+
+    public function update(STRING $titulo,STRING $autor, STRING $num_pag,INT $id):array
+    {   
+
+        $stmt = $this->conn->prepare("UPDATE livro SET titulo = :TITULO ,autor = :AUTOR,num_pag = :NUM WHERE id = :ID");
+        $stmt->bindValue(':ID',$id);
+        $stmt->bindValue(':TITULO',$titulo);
+        $stmt->bindValue(':AUTOR',$autor);
+        $stmt->bindValue(':NUM',$num_pag);
+
+        $stmt->execute();
+        if($stmt->rowCount() == 1){
+            return ['cod' => 200,'msg' => 'OK'];
+        }
+        else{
+            return ['cod' => 400, 'msg' => 'Usuario não encontrado!'];
+            
+        }
+        
+    }
 }
