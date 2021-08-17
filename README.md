@@ -15,10 +15,17 @@ Requisitos para rodar o projeto:
 PASSOS:
 
 1 - Executar o script sql, para a criação dos bancos de dados;
+![banco](https://user-images.githubusercontent.com/58447450/129658803-0bdf42af-fc7d-44a0-9e45-adc0b03cde8a.png)
 
 2 - Subir server = php -S localhost:8000 -t public;
+![server](https://user-images.githubusercontent.com/58447450/129658831-1d31d919-1585-480b-8afb-1acd5832dca1.png)
 
 3 - Execultal as requisições para o seu localhost, eu utilizei o POSTMAN para realizar as requisições HTTP (GET - POST - DELETE - PUT);
+![PostmanUrl](https://user-images.githubusercontent.com/58447450/129658853-59b5da07-b3b2-4dd3-bfa5-d63d4193219c.png)
+![PostmanMetdo](https://user-images.githubusercontent.com/58447450/129658865-85c8c55a-f646-4ae9-9d7f-77389cd3a921.png)
+![PostmanPrametro](https://user-images.githubusercontent.com/58447450/129658878-b7d7edd2-0f46-4fb8-ab41-e552d1afee30.png)
+![PostmanResult](https://user-images.githubusercontent.com/58447450/129658891-2750bacc-0fe8-4ca5-b7c2-595686bc7a84.png)
+
 
 ------ URL BASE = localhost:8000/api/ -------
 
