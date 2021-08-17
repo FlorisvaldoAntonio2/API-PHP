@@ -24,6 +24,8 @@ PASSOS:
 
 * EXEMPLOS:
 
+*Usuario
+
 - Retornar um usuario (METODO HTTP = GET): localhost:8000/api/user/{id} -> localhost:8000/api/user/1
 
 - Retornar todos os usuarios (METODO HTTP = GET): localhost:8000/api/user
@@ -32,6 +34,11 @@ PASSOS:
 
 - Adicionar usuario (METODO HTTP = POST): localhost:8000/api/user
 parametros no corpo da requisição = nome - email (unico) - sexo ('M' or 'F')
+
+- Atualizar um usuairo (METODO HTTP = PUT): localhost:8000/api/user/{id} -> localhost:8000/api/user/1
+parametros no corpo da requisição = nome - email (unico) - sexo ('M' or 'F')
+
+*LIVRO
 
 - Retornar um livro (METODO HTTP = GET): localhost:8000/api/livro/{id} -> localhost:8000/api/livro/1
 
@@ -42,3 +49,5 @@ parametros no corpo da requisição = nome - email (unico) - sexo ('M' or 'F')
 - Adicionar livro (METODO HTTP = POST): localhost:8000/api/livro
 parametros no corpo da requisição = titulo - autor - num_pag
 
+- Atualizar um usuairo (METODO HTTP = PUT): localhost:8000/api/livro/{id} -> localhost:8000/api/livro/1
+parametros no corpo da requisição = titulo - autor - num_pag
