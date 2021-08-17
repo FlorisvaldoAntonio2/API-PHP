@@ -5,7 +5,7 @@ Minha API
 
 Esse prejeto é apenas um exercio para o treinamento pessoal;
 
------Estou implementando ainda o PUT e a validação de dados e usuarios(Update dos usuarios e livros)------
+-----Estou implementando a validação de dados e de usuarios------
 
 Requisitos para rodar o projeto:
 * PHP 
@@ -14,7 +14,7 @@ Requisitos para rodar o projeto:
 
 PASSOS:
 
-1 - Executar o script sql, para a criação dos bancos;
+1 - Executar o script sql, para a criação dos bancos de dados;
 
 2 - Subir server = php -S localhost:8000 -t public;
 
@@ -49,5 +49,10 @@ parametros no corpo da requisição = nome - email (unico) - sexo ('M' or 'F')
 - Adicionar livro (METODO HTTP = POST): localhost:8000/api/livro
 parametros no corpo da requisição = titulo - autor - num_pag
 
-- Atualizar um usuairo (METODO HTTP = PUT): localhost:8000/api/livro/{id} -> localhost:8000/api/livro/1
+- Atualizar um livro (METODO HTTP = PUT): localhost:8000/api/livro/{id} -> localhost:8000/api/livro/1
 parametros no corpo da requisição = titulo - autor - num_pag
+
+*IMPORTANTE
+Na atualização usar a opção x-www-form-urlencoded
+![put-api](https://user-images.githubusercontent.com/58447450/129657525-ec441eb2-d0f0-4a11-9747-3803d89c84ff.png)
+
