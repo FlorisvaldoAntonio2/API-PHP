@@ -59,6 +59,20 @@ parametros no corpo da requisição = titulo - autor - num_pag
 - Atualizar um livro (METODO HTTP = PUT): localhost:8000/api/livro/{id} -> localhost:8000/api/livro/1
 parametros no corpo da requisição = titulo - autor - num_pag
 
+*Emprestimo
+
+- Retornar um emprestimo (METODO HTTP = GET): localhost:8000/api/emprestimo/{id_user}/{id_livro} -> localhost:8000/api/livro/1/3
+
+- Retornar todos os emprestimo (METODO HTTP = GET): localhost:8000/api/emprestimo
+
+- Deletar um emprestimo (METODO HTTP = DELETE): localhost:8000/api/emprestimo/{id_user}/{id_livro} -> localhost:8000/api/livro/1/3
+
+- Adicionar emprestimo (METODO HTTP = POST): localhost:8000/api/emprestimo
+parametros no corpo da requisição = cod_user - cod_livro - data_entrega
+
+- Atualizar a data de entrega de um emprestimo (METODO HTTP = PUT): localhost:8000/api/livro/{id_user}/{id_livro} -> localhost:8000/api/livro/1/3
+parametros no corpo da requisição = data_entrega
+
 *IMPORTANTE
 Na atualização usar a opção x-www-form-urlencoded
 ![put-api](https://user-images.githubusercontent.com/58447450/129657525-ec441eb2-d0f0-4a11-9747-3803d89c84ff.png)
