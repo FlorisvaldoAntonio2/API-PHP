@@ -4,8 +4,9 @@ namespace api\controller;
 
 use api\model\BancoUser;
 use api\model\ModelUser;
+use api\controller\InterfaceMetodos;
 
-class User{
+class User implements InterfaceMetodos{
     private $conexao;
     private $user;
 

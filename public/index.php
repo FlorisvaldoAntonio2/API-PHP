@@ -10,7 +10,7 @@
 
         $url = explode('/',$_SERVER['PATH_INFO']);
 
-        $parametros = ['user','livro'];
+        $parametros = ['user','livro','emprestimo'];
 
         
         if($url[1] !== 'api' || !in_array(strtolower($url[2]), $parametros)){

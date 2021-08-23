@@ -20,3 +20,18 @@ CREATE TABLE livro(
     num_pag INT NOT NULL,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE emprestimo(
+    cod_user INT,
+    cod_livro INT,
+    data_emprestimo DATETIME NOT NULL DEFAULT (NOW()),
+    data_entrega DATETIME NOT NULL,
+    total_dias_emprestados INT GENERATED ALWAYS AS (TIMESTAMPDIFF(DAY , data_emprestimo, data_entrega)) VIRTUAL,
+    PRIMARY KEY (cod_user,cod_livro),
+    FOREIGN KEY (cod_user)
+    REFERENCES user(id),
+    FOREIGN KEY (cod_livro)
+    REFERENCES livro(id)
+);
+
+

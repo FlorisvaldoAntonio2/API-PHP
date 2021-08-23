@@ -17,6 +17,7 @@ class Uri{
 
         if($this->metodo === 'get' || $this->metodo === 'delete' || $this->metodo === 'put'){
             $this->valor[0] = isset($this->url[3]) ? $this->url[3] : null;
+            $this->valor[1] = isset($this->url[4]) ? $this->url[4] : null;
         }
         elseif($this->metodo === 'post'){
             $this->valor[0] = isset($_POST) ? $_POST: null;

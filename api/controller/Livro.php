@@ -4,8 +4,9 @@ namespace api\controller;
 
 use api\model\ModelLivro;
 use api\model\BancoLivro;
+use api\controller\InterfaceMetodos;
 
-class Livro{
+class Livro implements InterfaceMetodos{
     private $conexao;
     private $livro;
 
