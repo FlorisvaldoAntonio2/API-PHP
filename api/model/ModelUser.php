@@ -2,9 +2,9 @@
 
 namespace api\model;
 
-use api\model\BancoUser;
+use api\model\Banco;
 
-class ModelUser extends BancoUser{
+class ModelUser extends Banco{
      private $nome;
      private $email;
      private $sexo;
@@ -45,13 +45,15 @@ class ModelUser extends BancoUser{
 
      }
 
-     public function persistir()
+     //  Passa para o metoddo insert os dados de parametros e a class
+     public function persistir(ARRAY $params,STRING $class)
      {
-         return $this->insert($this->getNome(),$this->getEmail(),$this->getSexo());
+         return $this->insert($this->getNome(),$this->getEmail(),$this->getSexo(),$params,$class);
      }
 
-     public function atualizar($id)
+     //  Passa para o metoddo insert os dados de parametros e a class e ID
+     public function atualizar(INT $id,ARRAY $params,STRING $class)
      {
-         return $this->update($this->getNome(),$this->getEmail(),$this->getSexo(),$id);
+         return $this->update($this->getNome(),$this->getEmail(),$this->getSexo(),$id,$params,$class);
      }
 }

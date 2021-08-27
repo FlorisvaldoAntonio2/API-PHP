@@ -1,5 +1,5 @@
 <?php
-
+// ATENÇÃO AINDA NÃO REFATORADO
 namespace api\model;
 
 use api\model\ConexaoApi;

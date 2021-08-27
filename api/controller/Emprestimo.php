@@ -1,11 +1,10 @@
 <?php
-
+// ATENÇÃO AINDA NÃO REFATORADO
 namespace api\controller;
 
 use api\model\ModelEmprestimo;
-use api\controller\InterfaceMetodos;
 
-class Emprestimo implements InterfaceMetodos{
+class Emprestimo{
     private $conexao;
 
     public function __construct()
