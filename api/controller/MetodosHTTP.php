@@ -8,8 +8,8 @@ abstract class MetodosHTTP{
     {   
         // verifica se existe o valor do ID
         if($id[0]){
-            // passamos o ID e o nome da class que foi instancida dinâmicamente
-            return $this->conexao->select((int)$id[0],get_class($this));
+            // passamos os IDs e o nome da class que foi instancida dinâmicamente
+            return $this->conexao->select($id,get_class($this));
         }
         // caso não exista traz tudo
         else{
@@ -21,8 +21,7 @@ abstract class MetodosHTTP{
     public function delete($id = null)
     {
         if($id[0]){
-            //cast para INT
-            return $this->conexao->delete((int)$id[0],get_class($this));
+            return $this->conexao->delete($id,get_class($this));
         }
         else{
             return ['cod'=> 417,'msg' =>'Parametro invalido ou faltando'];
@@ -50,7 +49,7 @@ abstract class MetodosHTTP{
                         $this->conexao->$nomeSet($resu[$parametros[$cont]]);
                     }
                 
-                    return $this->conexao->atualizar((int)$value[0],$parametros,get_class($this));
+                    return $this->conexao->atualizar($value,$parametros,get_class($this));
             
                 }
             else{

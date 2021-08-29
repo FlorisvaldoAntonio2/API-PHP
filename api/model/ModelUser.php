@@ -48,12 +48,14 @@ class ModelUser extends Banco{
      //  Passa para o metoddo insert os dados de parametros e a class
      public function persistir(ARRAY $params,STRING $class)
      {
-         return $this->insert($this->getNome(),$this->getEmail(),$this->getSexo(),$params,$class);
+        $values = [$this->getNome(),$this->getEmail(),$this->getSexo()];
+        return $this->insert($values,$params,$class);
      }
 
      //  Passa para o metoddo insert os dados de parametros e a class e ID
-     public function atualizar(INT $id,ARRAY $params,STRING $class)
+     public function atualizar(ARRAY $id,ARRAY $params,STRING $class)
      {
-         return $this->update($this->getNome(),$this->getEmail(),$this->getSexo(),$id,$params,$class);
+         $values = [$this->getNome(),$this->getEmail(),$this->getSexo()];
+         return $this->update($values,$id,$params,$class);
      }
 }

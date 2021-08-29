@@ -48,12 +48,14 @@ class ModelLivro extends Banco{
     //  Passa para o metoddo insert os dados de parametros e a class
      public function persistir(ARRAY $params,STRING $class)
      {
-         return $this->insert($this->getTitulo(),$this->getAutor(),$this->getNum_pag(),$params,$class);
+        $values = [$this->getTitulo(),$this->getAutor(),$this->getNum_pag()];
+        return $this->insert($values,$params,$class);
      }
 
      //  Passa para o metoddo update os dados de parametros e a class e ID
-     public function atualizar(INT $id,ARRAY $params,STRING $class)
+     public function atualizar(ARRAY $id,ARRAY $params,STRING $class)
      {
-         return $this->update($this->getTitulo(),$this->getAutor(),$this->getNum_pag(),$id,$params,$class);
+         $values = [$this->getTitulo(),$this->getAutor(),$this->getNum_pag()];
+         return $this->update($values,$id,$params,$class);
      }
 }
